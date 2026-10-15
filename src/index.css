@@ -1,0 +1,5 @@
+:root { font-family: "Malgun Gothic", "Apple SD Gothic Neo", sans-serif; color: #70442d; background: #f7e9d2; font-synthesis: none; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; background: radial-gradient(circle at 50% 0%, #fff8e9, #f1d9b8); }
+button { font: inherit; cursor: pointer; }
+#root { min-height: 100vh; }

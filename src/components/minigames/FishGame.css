@@ -1,0 +1,160 @@
+
+.fish-game {
+  width: min(680px, 100%);
+  margin: 20px auto;
+  padding: 24px;
+  box-sizing: border-box;
+  background: #fff4df;
+  border: 5px solid #b7864c;
+  border-radius: 22px;
+  text-align: center;
+  color: #714829;
+}
+
+.fish-game h2 {
+  margin: 0 0 18px;
+  color: #714829;
+}
+
+.fish-status {
+  display: flex;
+  justify-content: space-around;
+  padding: 12px;
+  margin-bottom: 16px;
+  background: #ffe2a8;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+.fish-field {
+  position: relative;
+  height: 380px;
+  overflow: hidden;
+  border: 5px solid #8ab6cb;
+  border-radius: 18px;
+  background: linear-gradient(
+    #bce9ff 0%,
+    #e4f8ff 75%,
+    #b3dc8c 76%,
+    #91c777 100%
+  );
+}
+
+.fish-cloud {
+  position: absolute;
+  font-size: 55px;
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+.cloud-one {
+  top: 10%;
+  left: 12%;
+}
+
+.cloud-two {
+  top: 25%;
+  right: 15%;
+}
+
+.falling-item {
+  position: absolute;
+  font-size: 35px;
+  transform: translate(-50%, -50%);
+  user-select: none;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.fish-player {
+  position: absolute;
+  bottom: 6%;
+  width: 18%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.fish-player img {
+  width: 85px;
+  height: 85px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.fish-player span {
+  margin-top: -20px;
+  font-size: 35px;
+}
+
+.fish-ground {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 9%;
+  background: #80b96c;
+}
+
+.fish-intro,
+.fish-result {
+  padding: 45px 15px;
+}
+
+.fish-intro-icons {
+  font-size: 65px;
+  margin-bottom: 15px;
+}
+
+.fish-intro p,
+.fish-result p {
+  margin: 12px 0;
+}
+
+.fish-game button {
+  padding: 12px 22px;
+  margin: 8px;
+  background: #ffda91;
+  border: 3px solid #b7864c;
+  border-radius: 12px;
+  color: #714829;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.fish-game button:hover:not(:disabled) {
+  background: #ffd07c;
+}
+
+.fish-controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 12px;
+}
+
+.fish-controls button {
+  min-width: 125px;
+  touch-action: manipulation;
+}
+
+.fish-exit {
+  margin-top: 18px !important;
+}
+
+@media (max-width: 600px) {
+  .fish-field {
+    height: 320px;
+  }
+
+  .fish-player img {
+    width: 65px;
+    height: 65px;
+  }
+
+  .falling-item {
+    font-size: 28px;
+  }
+}

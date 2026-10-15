@@ -1,0 +1,178 @@
+
+.egg-game {
+  width: min(680px, 100%);
+  margin: 20px auto;
+  padding: 24px;
+  box-sizing: border-box;
+  background: #fff4df;
+  border: 5px solid #b7864c;
+  border-radius: 22px;
+  text-align: center;
+  color: #714829;
+}
+
+.egg-game h2 {
+  color: #714829;
+  margin: 0 0 20px;
+}
+
+.egg-status {
+  display: flex;
+  justify-content: space-around;
+  gap: 8px;
+  padding: 14px;
+  margin-bottom: 20px;
+  background: #ffe2a8;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+.egg-intro,
+.egg-result {
+  padding: 40px 15px;
+}
+
+.egg-intro-icon,
+.egg-result-icon {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.egg-intro p,
+.egg-result p {
+  margin: 12px 0;
+}
+
+.egg-character {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  font-size: 48px;
+}
+
+.egg-character span {
+  padding: 12px 16px;
+  background: white;
+  border: 2px solid #e7c79a;
+  border-radius: 16px;
+  color: #714829;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.egg-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 25px;
+}
+
+.egg-shape {
+  width: 100px;
+  height: 135px;
+  border: 4px solid #c89c83;
+  border-radius: 50% 50% 45% 45% / 60% 60% 40% 40%;
+  box-shadow:
+    inset -12px -8px 0 rgba(0, 0, 0, 0.06),
+    inset 12px 10px 0 rgba(255, 255, 255, 0.35),
+    0 8px 0 #d9b78e;
+  animation: eggBounce 0.7s ease-in-out infinite alternate;
+}
+
+.egg-display p {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.egg-feedback {
+  min-height: 25px;
+  margin: 12px 0;
+  font-weight: bold;
+  color: #a56a3e;
+}
+
+.egg-baskets {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.egg-basket {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 18px 8px;
+  border: 4px solid #b7864c;
+  border-radius: 16px;
+  color: #714829;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+.egg-basket:hover {
+  transform: translateY(-5px);
+  filter: brightness(1.04);
+}
+
+.basket-icon {
+  font-size: 48px;
+}
+
+.egg-basket small {
+  font-size: 12px;
+}
+
+.egg-game button:not(.egg-basket) {
+  padding: 12px 22px;
+  margin: 8px;
+  background: #ffda91;
+  border: 3px solid #b7864c;
+  border-radius: 12px;
+  color: #714829;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.egg-game button:hover:not(:disabled) {
+  filter: brightness(1.05);
+}
+
+.egg-exit {
+  margin-top: 20px !important;
+}
+
+@keyframes eggBounce {
+  from {
+    transform: translateY(0) rotate(-4deg);
+  }
+
+  to {
+    transform: translateY(-8px) rotate(4deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .egg-game {
+    padding: 14px;
+  }
+
+  .egg-baskets {
+    gap: 6px;
+  }
+
+  .egg-basket {
+    padding: 12px 4px;
+  }
+
+  .basket-icon {
+    font-size: 34px;
+  }
+
+  .egg-character span {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,29 @@
+.game-shell { width: min(1100px, 96%); margin: 24px auto; }
+.topbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 22px; border: 4px solid #b57c4d; border-radius: 22px; background: #fff3d6; box-shadow: 0 6px 0 #d7aa76; }
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand-flower { font-size: 42px; }
+.brand h1 { margin: 0; font-size: clamp(23px, 3vw, 34px); color: #754322; line-height: 1.3; text-shadow: 1px 2px #f6d2a6; }
+.brand small { font-size: 12px; color: #b17d5c; }
+.top-stats { display: flex; gap: 10px; flex-wrap: wrap; }
+.coin-pill,.level-pill { border: 2px solid #c38c59; border-radius: 14px; background: #fffaf0; padding: 10px 14px; white-space: nowrap; font-size: 15px; }
+.farm-frame { margin-top: 20px; border: 9px solid #a87547; border-radius: 20px; overflow: hidden; box-shadow: 0 7px 0 #d4a46d, 0 12px 30px #70442d22; background: #b6db87; }
+.farm-scene { position: relative; aspect-ratio: 1.64; background-image: url('/assets/background/farm.png'); background-size: 100% 100%; background-position: center; image-rendering: pixelated; }
+.scene-label { position: absolute; top: 3%; right: 3%; background: #fff3d8e8; border: 2px solid #b78555; border-radius: 30px; padding: 8px 15px; font-size: 13px; z-index: 1; }
+.farm-animal { position: absolute; transform: translate(-50%,-50%); border: 0; background: transparent; padding: 0; display: flex; flex-direction: column; align-items: center; animation: bob 2.3s ease-in-out infinite; filter: drop-shadow(0 4px 1px #3d6c3840); }
+.farm-animal:nth-of-type(3) { animation-delay: .5s; }.farm-animal:nth-of-type(4) { animation-delay: 1s; }
+.farm-animal img { width: clamp(55px, 8vw, 105px); height: clamp(55px, 8vw, 105px); object-fit: contain; image-rendering: pixelated; transition: transform .15s; }
+.farm-animal:hover img { transform: scale(1.12); }
+.nameplate { background: #fff0cd; border: 2px solid #a76e48; border-radius: 20px; padding: 3px 16px; font-size: 14px; font-weight: 800; }
+.heart-bubble { color: #f66f91; background: #fff7e9; border: 2px solid #b67d55; border-radius: 12px; padding: 1px 8px; font-size: 16px; margin-bottom: -2px; }
+.bottom-nav { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-top: 20px; }
+.bottom-nav button { background: linear-gradient(#ffe9b7,#f6c98a); border: 3px solid #ae7447; border-radius: 16px; box-shadow: 0 5px 0 #c8915d; padding: 15px 8px; color: #78482a; font-weight: 800; font-size: 17px; display: flex; align-items: center; justify-content: center; gap: 10px; }
+.bottom-nav button span { font-size: 24px; }.bottom-nav button.active,.bottom-nav button:hover { background: linear-gradient(#fff2bd,#ffd16d); transform: translateY(-2px); }
+.modal-overlay { position: fixed; inset: 0; z-index: 10; background: #3424168a; display: flex; align-items: center; justify-content: center; padding: 16px; }
+.animal-modal { width: min(440px,100%); background: #fff7e9; border: 5px solid #b77d55; border-radius: 24px; overflow: hidden; box-shadow: 0 12px 0 #6c402f60; }
+.modal-heading { display: flex; justify-content: space-between; align-items: center; background: #f9b4b7; padding: 12px 20px; font-size: 22px; font-weight: 900; }.modal-heading button { border: 2px solid #a66c4a; border-radius: 10px; background: #fff4dc; width: 36px; height: 36px; font-size: 26px; line-height: 1; color: #865438; }
+.modal-content { display: flex; align-items: center; gap: 20px; padding: 16px 24px 8px; }.modal-content img { width: 125px; height: 125px; object-fit: contain; image-rendering: pixelated; background: #ffeacb; border-radius: 22px; }.animal-info { display: grid; gap: 10px; font-size: 14px; }.animal-info span { display: flex; gap: 16px; }.animal-info b { color: #a65f45; }
+.stat-line { padding: 6px 24px; }.stat-line>div:first-child { display: flex; justify-content: space-between; font-size: 14px; font-weight: 700; margin-bottom: 6px; }.meter { height: 16px; background: #e9cdbb; border-radius: 20px; overflow: hidden; }.meter span { display: block; height: 100%; border-radius: 20px; transition: width .2s; }.hunger-meter { background: #94ca73; }.love-meter { background: #f58ca7; }
+.feedback { margin: 12px 24px; padding: 10px; background: #fff0d3; border-radius: 12px; font-size: 13px; text-align: center; }.modal-actions { display: flex; gap: 10px; padding: 8px 24px 24px; }.modal-actions button { flex: 1; border: 2px solid #b67c50; background: #ffe0a1; border-radius: 12px; padding: 12px 4px; font-weight: 800; color: #754322; }.modal-actions small { display: block; margin-top: 4px; font-weight: 400; }
+.placeholder-page { min-height: 400px; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #e5f1c6; }.placeholder-icon { font-size: 70px; }.placeholder-page button { background: #ffe1a0; border: 2px solid #ae7447; padding: 12px 18px; border-radius: 12px; }
+@keyframes bob { 0%,100% { transform: translate(-50%,-50%); } 50% { transform: translate(-50%,calc(-50% - 7px)); } }
+@media(max-width:640px) { .topbar { padding: 12px; flex-direction: column; align-items: stretch; }.top-stats { justify-content: space-between; }.brand-flower { font-size: 28px; }.farm-scene { aspect-ratio: 1.1; background-size: auto 100%; }.scene-label { font-size: 10px; }.farm-animal img { width: 60px; height: 60px; }.nameplate { font-size: 11px; padding: 2px 8px; }.bottom-nav { gap: 6px; }.bottom-nav button { flex-direction: column; font-size: 12px; gap: 3px; padding: 10px 2px; }.bottom-nav button span { font-size: 22px; } }
