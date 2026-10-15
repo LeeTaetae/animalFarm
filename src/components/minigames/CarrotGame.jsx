@@ -47,25 +47,39 @@ export default function CarrotGame({ onExit, onReward }) {
         setPlaying(true);
     };
 
-    const harvest = (id) => {
-        if(!playing || timeLeft == 0) return;
+    
+const harvest = (id) => {
+  if (!playing || timeLeft === 0) return;
 
-        const crop  = crops.find((item) => item.id === id);
-        if(!crop || crop.harvested) return;
-        
-        setScore((prev) => Math.max(0, prev + (crop.type === "carrot" ? 10 : -5)));
+  const crop = crops.find((item) => item.id === id);
 
-        const updated = crops.map((item) =>
-            item.id === id ? { ...item, harvested: true } : item
-        );
+  if (!crop || crop.harvested) return;
 
-        if(updated.every((item) => item.harvested)) {
-            setCrops(makeCrops())
-        } else {
-            setCrops(updated);
-        }
+  // 당근은 +10점, 시든 꽃은 -5점
+  setScore((prev) =>
+    Math.max(0, prev + (crop.type === "carrot" ? 10 : -5))
+  );
 
-    };
+  // 클릭한 작물 수확 처리
+  const updated = crops.map((item) =>
+    item.id === id
+      ? { ...item, harvested: true }
+      : item
+  );
+
+  // 당근이 모두 수확되었는지만 확인
+  const allCarrotsHarvested = updated
+    .filter((item) => item.type === "carrot")
+    .every((item) => item.harvested);
+
+  if (allCarrotsHarvested) {
+    // 꽃이 남아 있어도 다음 카드 생성
+    setCrops(makeCrops());
+  } else {
+    setCrops(updated);
+  }
+};
+
 
     const claimReward = () => {
         if(!finished || claimed) return;
